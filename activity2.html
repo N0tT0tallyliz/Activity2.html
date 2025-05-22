@@ -65,6 +65,51 @@
     </style>
 </head>
 <body>
-    
+     <button onclick="changeImages()">Change Event Images</button>
+  <button onclick="highlightEvents()">Highlight Events</button>
+  <button onclick="askFavoriteEvent()">What's Your Favorite Event?</button>
+
+  <p id="userAnswer"></p>
+
+  <button onclick="trackClicks()">Click Tracker</button>
+  <p id="clickCount"></p>
+
+  <script>
+    // ✅ Function 1 – Change both images and log it
+    function changeImages() {
+      document.getElementById("sprintImg").src = "https://images.unsplash.com/photo-1603786831956-68ebc2c3bb67?auto=format&fit=crop&w=400&q=80";
+      document.getElementById("jumpImg").src = "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=400&q=80";
+      console.log("Images successfully updated.");
+    }
+
+    // ✅ Function 2 – Change multiple styles using getElementById()
+    function highlightEvents() {
+      let event1 = document.getElementById("event1");
+      let event2 = document.getElementById("event2");
+
+      event1.style.backgroundColor = "#9CCC65";
+      event1.style.color = "#fff";
+      event1.style.border = "3px dashed #fff";
+
+      event2.style.backgroundColor = "#9CCC65";
+      event2.style.color = "#fff";
+      event2.style.border = "3px dashed #fff";
+    }
+
+    // ✅ prompt() to ask user's favorite event
+    function askFavoriteEvent() {
+      let fav = prompt("What is your favorite track & field event?");
+      document.getElementById("userAnswer").innerHTML = "You chose: <span class='work'>" + fav + "</span>";
+    }
+
+    // ✅ Tutorial Function – Count button clicks
+    // Source: https://www.w3schools.com/js/js_events.asp
+    let count = 0;
+    function trackClicks() {
+      count++;
+      document.getElementById("clickCount").innerText = "You've clicked this button " + count + " times!";
+    }
+  </script>
+
 </body>
 </html>
